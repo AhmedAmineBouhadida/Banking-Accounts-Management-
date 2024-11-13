@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'baking_acoount_transaction_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bank_db',
-        'USER': 'user01', #'postgres',
-        'PASSWORD': 'user01',
-        'HOST': 'localhost', #'127.0.0.1'
+        'NAME': 'ATM2_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost', 
         'PORT': 5432
     },
 }

@@ -9,6 +9,9 @@ from spyne.model.complex import Iterable
 from django.views.decorators.csrf import csrf_exempt
 from .complexTypes import Account as complexAccount
 from .models import Account as modelAccount, Client as modelClient
+from zeep import Client
+from django.shortcuts import render
+
 
 class AccountService(ServiceBase):
     @rpc(complexAccount, _returns=Unicode)
@@ -53,10 +56,15 @@ class AccountService(ServiceBase):
             complexAcc=complexAccount(
                 rib=account.rib,
                 client=account.client,
-                balance=account.balance,
+                balance= float(account.balance),
                 creationDate=account.creation_date
             )
+#? Au lieu de retourner 10000 donnée en une seule fois on le retourne une par une pour ne pas bloquer la memoire Mawjouda f C# w java w Py ... 
             yield complexAcc
+
+            
+def home (request): 
+    return render(request,'home.html');
 
 #Configuration of The SOAP API
 application=Application(

@@ -3,7 +3,7 @@ class Client(ComplexModel):
     cin = Unicode
     name=Unicode
     familyName=Unicode
-    Email=Unicode
+    email=Unicode
 
 class Bank(ComplexModel):
     id=Integer
@@ -12,7 +12,7 @@ class Bank(ComplexModel):
     address=Unicode
 
 class Account(ComplexModel):
-    RIB=Unicode
+    rib=Unicode
     balance=Double
     creationDate=Date
     client=Client
